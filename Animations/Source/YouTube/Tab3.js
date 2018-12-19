@@ -9,11 +9,11 @@ import {
 } from "react-native";
 import { connect } from "react-redux";
 
-const Tab3 = ({ data }) => {
+const Tab3 = ({ dataSource }) => {
   return (
-    <View>
+    <View style={styles.container}>
       <FlatList
-        data={data}
+        data={dataSource}
         renderItem={renderItem}
         keyExtractor={(item, index) => index.toString()}
       />
@@ -21,12 +21,12 @@ const Tab3 = ({ data }) => {
   );
 };
 
-const renderItem = ({ item, index }) => {
-  <View>
-    <Text>{item.title}</Text>
-    <Image source={{ uri: item.imageUrl }} />
-  </View>;
-};
+const renderItem = ({ item, index }) => (
+  <View style={styles.item}>
+    <Image source={{ uri: item.imageUrl }} style={styles.image} />
+    <Text style={styles.titleText}>{item.title}</Text>
+  </View>
+);
 const mapStateToProps = state => ({
   ...state.FlowersReducer
 });
@@ -37,17 +37,23 @@ const styles = StyleSheet.create({
   container: {
     flex: 1
   },
+  item: {
+    flexDirection: "row",
+    margin: 4,
+    padding: 4
+  },
   image: {
-    height: height / 3,
-    width: width * 0.95,
+    height: height / 5,
+    width: height / 5,
     resizeMode: "cover",
     borderRadius: 2
   },
   titleText: {
-    top: 8,
+    top: 6,
     marginBottom: 15,
     fontSize: 14,
-    fontWeight: "600"
+    fontWeight: "600",
+    width: width - 16 - height / 5
   }
 });
 

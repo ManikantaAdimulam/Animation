@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { connect } from "react-redux";
 
-const Tab1 = ({ movieData }) => (
+const Tab2 = ({ movieData }) => (
   <View style={styles.container}>
     <FlatList
       data={movieData}
@@ -23,7 +23,7 @@ const mapStateToProps = state => ({
   ...state.reducer
 });
 
-export default connect(mapStateToProps)(Tab1);
+export default connect(mapStateToProps)(Tab2);
 const renderItem = ({ item }) => {
   return (
     <View>

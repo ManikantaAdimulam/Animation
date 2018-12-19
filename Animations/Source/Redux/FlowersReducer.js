@@ -1,5 +1,10 @@
 const initialState = {
-  data: []
+  dataSource: [
+    {
+      title: "",
+      imageUrl: ""
+    }
+  ]
 };
 
 export function FlowersReducer(state = initialState, action) {
@@ -7,16 +12,15 @@ export function FlowersReducer(state = initialState, action) {
     case "GET_FLOWERS":
       return { ...state };
     case "GET_FLOWERS_SUCCESS":
-    console.log(action.data)
       return {
-        ...state.data,
-        data: action.data.forEach(flower => {
-        data.push({
-          title: flower.volumeInfo.title,
-          imageUrl: flower.volumeInfo.imageLinks.thumbnail
-        });
-      })
-    }
+        ...state,
+        dataSource: action.data.map(flower => {
+          return {
+            title: flower.volumeInfo.title,
+            imageUrl: flower.volumeInfo.imageLinks.thumbnail
+          };
+        })
+      };
     case "GET_FLOWERS_FAILURE":
       return {
         ...state,
