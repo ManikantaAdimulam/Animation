@@ -6,6 +6,7 @@ import TabBar from "./Source/TabBar/TabBar";
 import Tab1 from "./Source/YouTube/Tab1";
 import Tab2 from "./Source/YouTube/Tab2";
 import Tab3 from "./Source/YouTube/Tab3";
+import Tab4 from "./Source/YouTube/Tab4";
 
 class App extends Component {
   render() {
@@ -16,7 +17,7 @@ class App extends Component {
             <Text style={styles.headerText}>YouTube</Text>
           </View>
           <TabBar
-            tabs={[<Tab1 />, <Tab2 />, <Tab3 />, <Tab4 />]}
+            tabs={[<Tab1  key={"1"}/>, <Tab2  key={"2"}/>, <Tab3  key={"3"}/>, <Tab4  key={"4"}/>]}
             titles={["Home", "Hot", "Trending", "Account"]}
           />
         </View>
@@ -45,9 +46,3 @@ const styles = StyleSheet.create({
     fontWeight: "bold"
   }
 });
-
-const Tab4 = () => (
-  <View style={styles.container}>
-    <Text>Account</Text>
-  </View>
-);

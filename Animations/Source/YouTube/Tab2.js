@@ -5,12 +5,22 @@ import {
   FlatList,
   StyleSheet,
   Image,
-  Dimensions
+  Dimensions,
+  TouchableHighlight
 } from "react-native";
 import { connect } from "react-redux";
+import { getData } from "../Redux/Actions";
 
-const Tab2 = ({ movieData }) => (
+const Tab2 = ({ movieData, dispatch }) => (
   <View style={styles.container}>
+    <TouchableHighlight
+      onPress={() => {
+        dispatch(getData());
+      }}
+    >
+      <Text>Get Movies</Text>
+    </TouchableHighlight>
+
     <FlatList
       data={movieData}
       renderItem={renderItem}
@@ -36,13 +46,14 @@ const renderItem = ({ item }) => {
 const { height, width } = Dimensions.get("window");
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    paddingLeft: 8
   },
   image: {
     height: height / 3,
     width: width * 0.95,
     resizeMode: "cover",
-    borderRadius: 2
+    borderRadius: 2,
   },
   titleText: {
     top: 8,

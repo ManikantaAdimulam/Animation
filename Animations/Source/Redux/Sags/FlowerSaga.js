@@ -11,14 +11,13 @@ export function* flowersWatcher() {
 }
 
 function getFlowers() {
-    console.log("called")
   return axios({
       url: "https://www.googleapis.com/books/v1/volumes?q=flowers",
       method: "get",
       timeout: 3000
     })
     .then(response => {
-      console.log(response);
+      // console.log(response);
       return response.data.items;
     }).catch((error)=>{
         console.log('error',error)

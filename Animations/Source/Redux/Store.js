@@ -1,9 +1,9 @@
 import { createStore, applyMiddleware, combineReducers } from "redux";
-import { reducer } from "./Reducer";
-import { HomeReducer } from "./HomeReducer";
-import { FlowersReducer } from "./FlowersReducer";
+import { reducer } from "./Reducers/Reducer";
+import { HomeReducer } from "./Reducers/HomeReducer";
+import { FlowersReducer } from "./Reducers/FlowersReducer";
 import createSagaMiddleware from "redux-saga";
-import { rootSaga } from "./RootSaga";
+import { rootSaga } from "./Sags/RootSaga";
 
 const rootReducer = combineReducers({ reducer, HomeReducer, FlowersReducer });
 

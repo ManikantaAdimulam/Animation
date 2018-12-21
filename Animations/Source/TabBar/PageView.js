@@ -18,7 +18,6 @@ export const PageView = props => {
       renderItem={renderItem}
       scrollEventThrottle={16}
       keyExtractor={(item, index) => index.toString()}
-      paddingTop={15}
     />
   );
 };
@@ -37,8 +36,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width,
-    alignItems: "center",
-    justifyContent: "center"
+    // alignItems: "center",
+    // justifyContent: "center"
   },
   item: {
     width

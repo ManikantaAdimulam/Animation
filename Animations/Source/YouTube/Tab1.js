@@ -16,6 +16,7 @@ const Tab1 = ({ dataSource }) => (
       data={dataSource}
       renderItem={renderItem}
       keyExtractor={(item, index) => index.toString()}
+      paddingTop={8}
     />
   </View>
 );
@@ -37,7 +38,8 @@ const renderItem = ({ item }) => {
 const { height, width } = Dimensions.get("window");
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    paddingLeft: 8
   },
   image: {
     height: height / 3,

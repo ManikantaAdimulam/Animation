@@ -1,14 +1,14 @@
-import { call, put, takeLatest } from "redux-saga/effects";
-import { getDataSuccess } from "./Actions";
+import { call, put, takeEvery } from "redux-saga/effects";
+import { getDataSuccess } from "../Actions";
 import axios from "axios";
 
-export function* movieSaga() {
+function* movieSaga() {
   try {
     const data = yield call(getMovieData);
     yield put({ type: "GET_DATA_SUCCESS", data });
   } catch (error) {
     yield put({ type: "GET_DATA_FAILURE", error });
-    console.log(error, "error");
+    // console.log(error, "error");
   }
 }
 
@@ -21,7 +21,6 @@ function getMovieData() {
     return res;
   });
 }
-
- function* moviesWatcher() {
-  yield takeLatest("GET_DATA", movieSaga);
+export function* moviesWatcher() {
+  yield takeEvery("GET_DATA", movieSaga);
 }
