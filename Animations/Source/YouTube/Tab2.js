@@ -36,8 +36,9 @@ const mapStateToProps = state => ({
 export default connect(mapStateToProps)(Tab2);
 const renderItem = ({ item }) => {
   return (
-    <View>
+    <View style={{ flexDirection: "row", borderBottomWidth: 0.5, borderBottomColor: "#00000050", padding: 8 }}>
       <Image source={{ uri: item.large_cover_image }} style={styles.image} />
+      <Text style={styles.titleText}>{item.title_english}</Text>
       <Text style={styles.titleText}>{item.title_english}</Text>
     </View>
   );
@@ -47,18 +48,20 @@ const { height, width } = Dimensions.get("window");
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingLeft: 8
+    // paddingLeft: 8
   },
   image: {
     height: height / 3,
-    width: width * 0.95,
-    resizeMode: "cover",
+    // width: width * 0.95,
+    resizeMode: "stretch",
     borderRadius: 2,
+    aspectRatio: 0.7 / 1,
+    backgroundColor:"red"
   },
   titleText: {
-    top: 8,
     marginBottom: 15,
     fontSize: 14,
-    fontWeight: "600"
+    fontWeight: "600",
+    textAlign: "center"
   }
 });

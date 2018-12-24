@@ -17,7 +17,12 @@ class App extends Component {
             <Text style={styles.headerText}>MyTub🤪</Text>
           </View>
           <TabBar
-            tabs={[<Tab1  key={"1"}/>, <Tab2  key={"2"}/>, <Tab3  key={"3"}/>, <Tab4  key={"4"}/>]}
+            tabs={[
+              <Tab1 key={"1"} />,
+              <Tab2 key={"2"} />,
+              <Tab3 key={"3"} />,
+              <Tab4 key={"4"} />
+            ]}
             titles={["Home", "Hot", "Trending", "Account"]}
           />
         </View>
