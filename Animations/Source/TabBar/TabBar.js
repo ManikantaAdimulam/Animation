@@ -108,7 +108,7 @@ class TabBar extends PureComponent {
   }
 }
 const mapStateToProps = state => ({
- data: state.reducer
+  data: state.reducer
 });
 export default connect(mapStateToProps)(TabBar);
 
@@ -122,7 +122,9 @@ const styles = StyleSheet.create({
   menuBar: {
     height: 40,
     width,
-    backgroundColor: "red"
+    backgroundColor: "red",
+    borderBottomWidth: 0.5,
+    borderColor: "#00000050",
     // borderWidth: 1,
     // borderColor: "red",
     // top: 20

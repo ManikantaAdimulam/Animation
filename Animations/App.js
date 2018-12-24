@@ -14,7 +14,7 @@ class App extends Component {
       <Provider store={store}>
         <View style={styles.container}>
           <View style={styles.header}>
-            <Text style={styles.headerText}>YouTube</Text>
+            <Text style={styles.headerText}>MyTub🤪</Text>
           </View>
           <TabBar
             tabs={[<Tab1  key={"1"}/>, <Tab2  key={"2"}/>, <Tab3  key={"3"}/>, <Tab4  key={"4"}/>]}

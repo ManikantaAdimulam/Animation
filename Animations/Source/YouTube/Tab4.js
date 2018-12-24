@@ -13,22 +13,27 @@ const Tab4 = () => {
         <Text>Adimulam Manikanta</Text>
       </View>
       <View style={styles.profileDataView}>
-        <View flexDirection={"row"} width={"100%"}>
-          <Text width={100} backgroundColor={"red"}>
-            Date of Birth:{" "}
-          </Text>
-          <Text>16/06/1994</Text>
+        <View width={"35%"} justifyContent={"space-between"}>
+          <View flexDirection={"row"} justifyContent={"space-between"}>
+            <Text>Date of Birth</Text>
+            <Text>: </Text>
+          </View>
+          <View flexDirection={"row"} justifyContent={"space-between"}>
+            <Text>Address</Text>
+            <Text>: </Text>
+          </View>
+          <View flexDirection={"row"} justifyContent={"space-between"}>
+            <Text>Gender</Text>
+            <Text>: </Text>
+          </View>
         </View>
-        <View flexDirection={"row"} width={"100%"}>
-          <Text width={100}>Address: </Text>
+        <View width={"68%"} justifyContent={"space-between"}>
+          <Text>16/06/1994</Text>
           <Text>
             Flat no 29, Luxury PG, 3rd Right, Jubliee enclave, Near silparamam,
             Hyderabad
           </Text>
-        </View>
-        <View flexDirection={"row"} width={"100%"}>
-          <Text width={100}>Gender: </Text>
-          <Text>Gender</Text>
+          <Text>Male</Text>
         </View>
       </View>
       <View style={styles.historyView}>
@@ -49,19 +54,37 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#fff",
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
+    shadowColor: "#00000070",
+    shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.8,
-    shadowRadius: 2
+    shadowRadius: 2,
+    zIndex: 3
     // elevation: 1
   },
   profileDataView: {
     height: "30%",
     width: "100%",
-    justifyContent: "space-evenly"
+    justifyContent: "space-evenly",
+    backgroundColor: "#fff",
+    shadowColor: "#00000070",
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    padding: 8,
+    flexDirection: "row",
+    zIndex: 2
   },
   historyView: {
-    flex: 0.1
+    height: "39.2%",
+    width: "100%",
+    justifyContent: "space-evenly",
+    backgroundColor: "#fff",
+    shadowColor: "#00000070",
+    shadowOffset: { width: 1, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    padding: 8,
+    flexDirection: "row"
   },
   image: {
     resizeMode: "contain",
