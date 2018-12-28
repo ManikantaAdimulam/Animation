@@ -9,7 +9,7 @@ export default class PanHandler extends Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     // Initialize PanResponder with move handling
 
     this.panResponder = PanResponder.create({
