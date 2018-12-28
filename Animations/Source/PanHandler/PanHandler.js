@@ -1,7 +1,18 @@
 import React, { Component } from "react";
 import { StyleSheet, PanResponder, Animated } from "react-native";
 
+/**
+ * PanResponder Demo
+ *
+ * @export class
+ * @class PanHandler
+ * @extends {Component}
+ */
 export default class PanHandler extends Component {
+  /**
+   * Creates an instance of PanHandler.
+   * @memberof PanHandler
+   */
   constructor() {
     super();
     this.state = {
@@ -9,15 +20,19 @@ export default class PanHandler extends Component {
     };
   }
 
+  /**
+   * Life cycle method.
+   *
+   * @memberof PanHandler
+   */
   componentDidMount() {
     // Initialize PanResponder with move handling
-
     this.panResponder = PanResponder.create({
       onStartShouldSetPanResponder: (evt, gestureState) => true,
       onStartShouldSetPanResponderCapture: (evt, gestureState) => true,
       onMoveShouldSetPanResponder: (evt, gestureState) => true,
       onMoveShouldSetPanResponderCapture: (evt, gestureState) => true,
-      onPanResponderMove:  Animated.event([
+      onPanResponderMove: Animated.event([
         {
           nativeEvent: {
             pageX: this.state.pan.x,
@@ -28,6 +43,12 @@ export default class PanHandler extends Component {
     });
   }
 
+  /**
+   * UI
+   *
+   * @returns jsx
+   * @memberof PanHandler
+   */
   render() {
     const panStyle = {
       transform: this.state.pan.getTranslateTransform()
@@ -42,10 +63,12 @@ export default class PanHandler extends Component {
     );
   }
 }
+///
 let CIRCLE_RADIUS = 30;
+///
 let styles = StyleSheet.create({
   circle: {
-    backgroundColor: "skyblue",
+    backgroundColor: "#000000",
     width: CIRCLE_RADIUS * 2,
     height: CIRCLE_RADIUS * 2,
     borderRadius: CIRCLE_RADIUS

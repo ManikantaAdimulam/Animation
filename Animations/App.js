@@ -8,6 +8,12 @@ import Tab2 from "./Source/YouTube/Tab2";
 import Tab3 from "./Source/YouTube/Tab3";
 import Tab4 from "./Source/YouTube/Tab4";
 
+/**
+ * Demo
+ *
+ * @class App
+ * @extends {Component}
+ */
 class App extends Component {
   render() {
     return (
@@ -30,9 +36,9 @@ class App extends Component {
     );
   }
 }
-
+///
 export default App;
-
+///
 const styles = StyleSheet.create({
   container: {
     flex: 1

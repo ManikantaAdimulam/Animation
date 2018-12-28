@@ -1,11 +1,6 @@
 import React, { Component } from "react";
-import {
-  View,
-  StyleSheet,
-  Dimensions,
-  FlatList
-} from "react-native";
-
+import { View, StyleSheet, Dimensions, FlatList } from "react-native";
+///
 export const PageView = props => {
   return (
     <FlatList
@@ -21,21 +16,17 @@ export const PageView = props => {
     />
   );
 };
-
+///
 const renderItem = ({ item, index }) => {
-  return (
-    <View style={styles.container}>
-      {item}
-    </View>
-  );
+  return <View style={styles.container}>{item}</View>;
 };
-
+///
 const { height, width } = Dimensions.get("window");
-
+///
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width,
+    width
     // alignItems: "center",
     // justifyContent: "center"
   },

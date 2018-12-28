@@ -10,7 +10,17 @@ import { PageView } from "./PageView";
 import MenuItem from "./MenuItem";
 import { connect } from "react-redux";
 
+/**
+ *
+ * @class TabBar
+ * @extends {PureComponent}
+ */
 class TabBar extends PureComponent {
+  /**
+   * Creates an instance of TabBar.
+   * @param {*} props
+   * @memberof TabBar
+   */
   constructor(props) {
     super(props);
     this.onScroll = this.onScroll.bind(this);
@@ -29,6 +39,12 @@ class TabBar extends PureComponent {
     });
   }
 
+  /**
+   * On selecting tab from tab bar
+   *
+   * @param {*} index
+   * @memberof TabBar
+   */
   onClick = index => {
     const presentIndex = index;
     Animated.timing(this.state.left, {
@@ -39,6 +55,12 @@ class TabBar extends PureComponent {
     this.state.selectedIndex.setValue(presentIndex);
   };
 
+  /**
+   * On scrolling page view
+   *
+   * @param {*} evt
+   * @memberof TabBar
+   */
   onScroll = evt => {
     const index =
       parseInt(evt.nativeEvent.contentOffset.x / width) *
@@ -50,10 +72,22 @@ class TabBar extends PureComponent {
       }).start();
     });
   };
+  /**
+   * On scroll end dragging
+   *
+   * @param {*} evt
+   * @memberof TabBar
+   */
   onScrollEndDrag = evt => {
     const value = parseInt(evt.nativeEvent.contentOffset.x / width);
     this.state.selectedIndex.setValue(parseInt(value));
   };
+  /**
+   * Creating UI
+   *
+   * @returns
+   * @memberof TabBar
+   */
   render() {
     return (
       <View style={styles.container}>
@@ -107,13 +141,20 @@ class TabBar extends PureComponent {
     );
   }
 }
+/**
+ * Redux connect
+ *
+ * @param {*} state
+ * @memberof TabBar
+ */
 const mapStateToProps = state => ({
   data: state.reducer
 });
+///
 export default connect(mapStateToProps)(TabBar);
-
+///
 const { height, width } = Dimensions.get("window");
-
+///
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -124,7 +165,7 @@ const styles = StyleSheet.create({
     width,
     backgroundColor: "red",
     borderBottomWidth: 0.5,
-    borderColor: "#00000050",
+    borderColor: "#00000050"
     // borderWidth: 1,
     // borderColor: "red",
     // top: 20

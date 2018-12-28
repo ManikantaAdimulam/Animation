@@ -10,7 +10,6 @@ import {
 import { connect } from "react-redux";
 
 const Tab1 = ({ dataSource }) => (
-  
   <View style={styles.container}>
     <FlatList
       data={dataSource}
@@ -25,7 +24,6 @@ const mapStateToProps = state => ({
   ...state.HomeReducer
 });
 
-export default connect(mapStateToProps)(Tab1);
 const renderItem = ({ item }) => {
   return (
     <View>
@@ -54,3 +52,5 @@ const styles = StyleSheet.create({
     fontWeight: "600"
   }
 });
+
+export default connect(mapStateToProps)(Tab1);

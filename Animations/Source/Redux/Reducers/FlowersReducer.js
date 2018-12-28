@@ -1,3 +1,6 @@
+/**
+ * Initial state
+ */
 const initialState = {
   dataSource: [
     {
@@ -7,6 +10,14 @@ const initialState = {
   ]
 };
 
+/**
+ * Flowers reducer
+ *
+ * @export
+ * @param {*} [state=initialState]
+ * @param {*} action
+ * @returns Updated state
+ */
 export function FlowersReducer(state = initialState, action) {
   switch (action.type) {
     case "GET_FLOWERS":

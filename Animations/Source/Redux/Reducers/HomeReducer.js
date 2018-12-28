@@ -1,4 +1,7 @@
-initialState = {
+/**
+ * Initial state
+ */
+const initialState = {
   dataSource: [
     {
       key: "0",
@@ -25,7 +28,14 @@ initialState = {
     }
   ]
 };
-
+/**
+ * Home reducer
+ *
+ * @export
+ * @param {*} [state=initialState]
+ * @param {*} action
+ * @returns State
+ */
 export function HomeReducer(state = initialState, action) {
   return {
     ...state

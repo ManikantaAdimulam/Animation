@@ -33,10 +33,16 @@ const mapStateToProps = state => ({
   ...state.reducer
 });
 
-export default connect(mapStateToProps)(Tab2);
 const renderItem = ({ item }) => {
   return (
-    <View style={{ flexDirection: "row", borderBottomWidth: 0.5, borderBottomColor: "#00000050", padding: 8 }}>
+    <View
+      style={{
+        flexDirection: "row",
+        borderBottomWidth: 0.5,
+        borderBottomColor: "#00000050",
+        padding: 8
+      }}
+    >
       <Image source={{ uri: item.large_cover_image }} style={styles.image} />
       <Text style={styles.titleText}>{item.title_english}</Text>
       <Text style={styles.titleText}>{item.title_english}</Text>
@@ -47,7 +53,7 @@ const renderItem = ({ item }) => {
 const { height, width } = Dimensions.get("window");
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1
     // paddingLeft: 8
   },
   image: {
@@ -56,7 +62,7 @@ const styles = StyleSheet.create({
     resizeMode: "stretch",
     borderRadius: 2,
     aspectRatio: 0.7 / 1,
-    backgroundColor:"red"
+    backgroundColor: "red"
   },
   titleText: {
     marginBottom: 15,
@@ -65,3 +71,5 @@ const styles = StyleSheet.create({
     textAlign: "center"
   }
 });
+
+export default connect(mapStateToProps)(Tab2);

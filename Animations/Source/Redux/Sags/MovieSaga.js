@@ -2,6 +2,10 @@ import { call, put, takeEvery } from "redux-saga/effects";
 import { getDataSuccess } from "../Actions";
 import axios from "axios";
 
+/**
+ * Movies Saga
+ *
+ */
 function* movieSaga() {
   try {
     const data = yield call(getMovieData);
@@ -12,6 +16,11 @@ function* movieSaga() {
   }
 }
 
+/**
+ * Getting movies from api.
+ *
+ * @returns JSon object.
+ */
 function getMovieData() {
   return axios({
     method: "get",
@@ -21,6 +30,11 @@ function getMovieData() {
     return res;
   });
 }
+/**
+ * Movies Watcher
+ *
+ * @export moviesWatcher
+ */
 export function* moviesWatcher() {
   yield takeEvery("GET_DATA", movieSaga);
 }
